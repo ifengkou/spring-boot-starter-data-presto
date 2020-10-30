@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.polarquant.data</groupId>
+    <artifactId>presto-spring-boot-starter</artifactId>
+    <version>1.0.0.RELEASE</version>
+    <name>presto-spring-boot-starter</name>
+    <description>Starter for using Presto</description>
+    <url>https://spring.io/projects/spring-boot</url>
+    <organization>
+        <name>Analysys, Inc.</name>
+        <url>https://www.analysys.cn</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>sloong</name>
+            <email>ifengkou@hotmail.com</email>
+            <organization>Analysys, Inc.</organization>
+            <organizationUrl>https://www.analysys.cn</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/spring-projects/spring-boot.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/spring-projects/spring-boot.git</developerConnection>
+        <url>https://github.com/spring-projects/spring-boot</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/spring-projects/spring-boot/issues</url>
+    </issueManagement>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>2.3.4.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.prestosql</groupId>
+            <artifactId>presto-jdbc</artifactId>
+            <version>322</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.24</version>
+        </dependency>
+        <dependency>
+            <groupId>com.polarquant.data</groupId>
+            <artifactId>presto-spring-boot-autoconfigure</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
+    </dependencies>
+</project>
