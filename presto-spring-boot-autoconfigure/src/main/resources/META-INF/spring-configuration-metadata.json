@@ -1,0 +1,94 @@
+{
+  "groups": [
+    {
+      "name": "spring.data.presto.jdbc",
+      "type": "com.polarquant.data.autoconfigure.PrestoJdbcProperties",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.ssl",
+      "type": "com.polarquant.data.autoconfigure.PrestoSSLProperties",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
+      "name": "spring.data.presto.pool",
+      "type": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.data.presto.jdbc.driver",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties",
+      "defaultValue": "com.facebook.presto.jdbc.PrestoDriver"
+    },
+    {
+      "name": "spring.data.presto.jdbc.password",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.ssl.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSSLProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "spring.data.presto.jdbc.ssl.key-store-password",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSSLProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.ssl.key-store-path",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSSLProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.url",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.username",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.initial-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.max-active",
+      "type": "java.lang.Integer",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.max-wait-millis",
+      "type": "java.lang.Long",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.min-evictable-idle-time-millis",
+      "type": "java.lang.Long",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.min-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.time-between-eviction-runs-millis",
+      "type": "java.lang.Long",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    }
+  ],
+  "hints": []
+}

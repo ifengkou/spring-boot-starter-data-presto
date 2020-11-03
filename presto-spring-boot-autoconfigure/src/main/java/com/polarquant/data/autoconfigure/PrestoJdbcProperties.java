@@ -2,6 +2,7 @@ package com.polarquant.data.autoconfigure;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 /**
  * @author shenlongguang<https://github.com/ifengkou>
@@ -14,4 +15,7 @@ public class PrestoJdbcProperties {
     private String username;
     private String password;
     private String url;
+
+    @NestedConfigurationProperty
+    PrestoSSLProperties ssl;
 }

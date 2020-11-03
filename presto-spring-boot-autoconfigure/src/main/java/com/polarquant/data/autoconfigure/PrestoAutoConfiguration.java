@@ -43,15 +43,16 @@ public class PrestoAutoConfiguration {
 
         //SSL
         Properties sslProperties = new Properties();
-        PrestoSSLProperties ssl = poolProperties.getSsl();
+        PrestoSSLProperties ssl = jdbcProperties.getSsl();
         if(ssl !=null && ssl.enabled){
             sslProperties.put("SSL","true");
-            sslProperties.put("SSLKeyStorePath",PrestoAutoConfiguration.class.getClassLoader().getResource("presto.jks").getPath());
             if(ssl.getKeyStorePath() != null && !"".equals(ssl.getKeyStorePath())){
                 File file = new File(ssl.getKeyStorePath());
                 if(file.exists()){
                     sslProperties.put("SSLKeyStorePath",ssl.getKeyStorePath());
                 }
+            }else {
+                sslProperties.put("SSLKeyStorePath",PrestoAutoConfiguration.class.getClassLoader().getResource("presto.jks").getPath());
             }
             if(ssl.getKeyStorePassword() != null && !"".equals(ssl.getKeyStorePassword())){
                 sslProperties.put("SSLKeyStorePassword",ssl.getKeyStorePassword());
