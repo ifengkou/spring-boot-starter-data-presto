@@ -6,7 +6,40 @@
 	<artifactId>presto-spring-boot-autoconfigure</artifactId>
 	<version>1.0.0.RELEASE</version>
 	<name>presto-spring-boot-autoconfigure</name>
-	<description>Demo project for Spring Boot</description>
+	<url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
+	<organization>
+		<name>PolarQuant, Inc.</name>
+		<url>https://www.polarquant.com</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>sloong</name>
+			<email>ifengkou@hotmail.com</email>
+			<organization>Analysys, Inc.</organization>
+			<organizationUrl>https://www.analysys.cn</organizationUrl>
+		</developer>
+		<developer>
+			<name>LoganShen</name>
+			<email>shenlongguang@polarquant.com</email>
+			<organization>PolarQuant, Inc.</organization>
+			<organizationUrl>https://www.polarquant.com</organizationUrl>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git://github.com/ifengkou/spring-boot-starter-data-presto.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/ifengkou/spring-boot-starter-data-presto.git</developerConnection>
+		<url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/ifengkou/spring-boot-starter-data-presto/issues</url>
+	</issueManagement>
 
 	<properties>
 		<java.version>1.8</java.version>

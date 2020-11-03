@@ -7,10 +7,10 @@
     <version>1.0.0.RELEASE</version>
     <name>presto-spring-boot-starter</name>
     <description>Starter for using Presto</description>
-    <url>https://spring.io/projects/spring-boot</url>
+    <url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
     <organization>
-        <name>Analysys, Inc.</name>
-        <url>https://www.analysys.cn</url>
+        <name>PolarQuant, Inc.</name>
+        <url>https://www.polarquant.com</url>
     </organization>
     <licenses>
         <license>
@@ -25,15 +25,21 @@
             <organization>Analysys, Inc.</organization>
             <organizationUrl>https://www.analysys.cn</organizationUrl>
         </developer>
+        <developer>
+            <name>LoganShen</name>
+            <email>shenlongguang@polarquant.com</email>
+            <organization>PolarQuant, Inc.</organization>
+            <organizationUrl>https://www.polarquant.com</organizationUrl>
+        </developer>
     </developers>
     <scm>
-        <connection>scm:git:git://github.com/spring-projects/spring-boot.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/spring-projects/spring-boot.git</developerConnection>
-        <url>https://github.com/spring-projects/spring-boot</url>
+        <connection>scm:git:git://github.com/ifengkou/spring-boot-starter-data-presto.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/ifengkou/spring-boot-starter-data-presto.git</developerConnection>
+        <url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
     </scm>
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/spring-projects/spring-boot/issues</url>
+        <url>https://github.com/ifengkou/spring-boot-starter-data-presto/issues</url>
     </issueManagement>
 
     <properties>
