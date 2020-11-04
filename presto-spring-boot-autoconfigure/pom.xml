@@ -1,112 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.polarquant.data</groupId>
-	<artifactId>presto-spring-boot-autoconfigure</artifactId>
-	<version>1.0.0.RELEASE</version>
-	<name>presto-spring-boot-autoconfigure</name>
-	<url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
-	<organization>
-		<name>PolarQuant, Inc.</name>
-		<url>https://www.polarquant.com</url>
-	</organization>
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<name>sloong</name>
-			<email>ifengkou@hotmail.com</email>
-			<organization>Analysys, Inc.</organization>
-			<organizationUrl>https://www.analysys.cn</organizationUrl>
-		</developer>
-		<developer>
-			<name>LoganShen</name>
-			<email>shenlongguang@polarquant.com</email>
-			<organization>PolarQuant, Inc.</organization>
-			<organizationUrl>https://www.polarquant.com</organizationUrl>
-		</developer>
-	</developers>
-	<scm>
-		<connection>scm:git:git://github.com/ifengkou/spring-boot-starter-data-presto.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/ifengkou/spring-boot-starter-data-presto.git</developerConnection>
-		<url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/ifengkou/spring-boot-starter-data-presto/issues</url>
-	</issueManagement>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.polarquant.data</groupId>
+    <artifactId>presto-spring-boot-autoconfigure</artifactId>
+    <version>1.0.0.RELEASE</version>
+    <name>presto-spring-boot-autoconfigure</name>
+    <packaging>jar</packaging>
+    <url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
+    <organization>
+        <name>PolarQuant, Inc.</name>
+        <url>https://www.polarquant.com</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>sloong</name>
+            <email>ifengkou@hotmail.com</email>
+            <organization>Analysys, Inc.</organization>
+            <organizationUrl>https://www.analysys.cn</organizationUrl>
+        </developer>
+        <developer>
+            <name>LoganShen</name>
+            <email>shenlongguang@polarquant.com</email>
+            <organization>PolarQuant, Inc.</organization>
+            <organizationUrl>https://www.polarquant.com</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/ifengkou/spring-boot-starter-data-presto.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/ifengkou/spring-boot-starter-data-presto.git
+        </developerConnection>
+        <url>https://github.com/ifengkou/spring-boot-starter-data-presto</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/ifengkou/spring-boot-starter-data-presto/issues</url>
+    </issueManagement>
 
-	<properties>
-		<java.version>1.8</java.version>
-		<druid.version>1.1.24</druid.version>
-	</properties>
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
+        <druid.version>1.1.24</druid.version>
+    </properties>
 
-	<dependencies>
+    <dependencies>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-			<version>2.3.5.RELEASE</version>
-			<optional>true</optional>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>2.3.5.RELEASE</version>
+            <optional>true</optional>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-			<version>2.3.5.RELEASE</version>
-			<optional>true</optional>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>2.3.5.RELEASE</version>
+            <optional>true</optional>
+        </dependency>
 
-		<dependency>
-			<groupId>io.prestosql</groupId>
-			<artifactId>presto-jdbc</artifactId>
-			<version>322</version>
-			<optional>true</optional>
-		</dependency>
+        <dependency>
+            <groupId>io.prestosql</groupId>
+            <artifactId>presto-jdbc</artifactId>
+            <version>322</version>
+            <optional>true</optional>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
-			<version>2.3.5.RELEASE</version>
-			<optional>true</optional>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>2.3.5.RELEASE</version>
+            <optional>true</optional>
+        </dependency>
 
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>${druid.version}</version>
-			<optional>true</optional>
-		</dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+            <optional>true</optional>
+        </dependency>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.12</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.12</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <!-- Compile -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.8.0</version>
+                        <configuration>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                        </configuration>
+                    </plugin>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+                    <!-- Source -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
+                    <!-- Javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <configuration>
+                            <show>private</show>
+                            <nohelp>true</nohelp>
+                            <charset>UTF-8</charset>
+                            <encoding>UTF-8</encoding>
+                            <docencoding>UTF-8</docencoding>
+                            <additionalparam>-Xdoclint:none
+                            </additionalparam>  <!-- TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- gpg plugin,用于签名认证 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <configuration>
+                            <passphrase>1234qwer</passphrase>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!--staging puglin,用于自动执行发布阶段(免手动)-->
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <!-- release plugin,用于发布到release仓库部署插件 -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>2.4.2</version>
+                    </plugin>
+                </plugins>
+            </build>
+            <!-- 这里引入 Settings.xml 中设置的用户名、密码 -->
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <name>snapshot</name>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <name>staging</name>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
