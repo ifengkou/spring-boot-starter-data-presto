@@ -16,6 +16,18 @@ public class PrestoJdbcProperties {
     private String password;
     private String url;
 
+
+
+    private String accessToken;
+
+    /**
+     * https://prestodb.io/docs/current/admin/resource-groups.html
+     */
+    private String applicationName;
+
+    @NestedConfigurationProperty
+    PrestoSessionProperties session;
+
     @NestedConfigurationProperty
     PrestoSSLProperties ssl;
 }

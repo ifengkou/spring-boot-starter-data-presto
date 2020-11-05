@@ -35,30 +35,57 @@ public class PrestoAutoConfiguration {
         DruidDataSource druidDataSource = new DruidDataSource();
         // jdbc
         druidDataSource.setDriverClassName(jdbcProperties.getDriver());
-        druidDataSource.setUsername(jdbcProperties.getUsername());
+        if(null != jdbcProperties.getUsername() && !"".equals(jdbcProperties.getUsername())){
+            druidDataSource.setUsername(jdbcProperties.getUsername());
+        }
         if(null != jdbcProperties.getPassword() && !"".equals(jdbcProperties.getPassword())){
             druidDataSource.setPassword(jdbcProperties.getPassword());
         }
+
         druidDataSource.setUrl(jdbcProperties.getUrl());
 
+        Properties connectProperties = new Properties();
         //SSL
-        Properties sslProperties = new Properties();
         PrestoSSLProperties ssl = jdbcProperties.getSsl();
         if(ssl !=null && ssl.enabled){
-            sslProperties.put("SSL","true");
+            connectProperties.put("SSL","true");
             if(ssl.getKeyStorePath() != null && !"".equals(ssl.getKeyStorePath())){
                 File file = new File(ssl.getKeyStorePath());
                 if(file.exists()){
-                    sslProperties.put("SSLKeyStorePath",ssl.getKeyStorePath());
+                    connectProperties.put("SSLKeyStorePath",ssl.getKeyStorePath());
                 }
-            }else {
-                sslProperties.put("SSLKeyStorePath",PrestoAutoConfiguration.class.getClassLoader().getResource("presto.jks").getPath());
             }
             if(ssl.getKeyStorePassword() != null && !"".equals(ssl.getKeyStorePassword())){
-                sslProperties.put("SSLKeyStorePassword",ssl.getKeyStorePassword());
+                connectProperties.put("SSLKeyStorePassword",ssl.getKeyStorePassword());
+            }
+
+            if(ssl.getTrustStorePath() != null && !"".equals(ssl.getTrustStorePath())){
+                File file = new File(ssl.getTrustStorePath());
+                if(file.exists()){
+                    connectProperties.put("SSLTrustStorePath",ssl.getTrustStorePath());
+                }
+            }
+            if(ssl.getTrustStorePassword() != null && !"".equals(ssl.getTrustStorePassword())){
+                connectProperties.put("SSLTrustStorePassword",ssl.getTrustStorePassword());
             }
         }
-        druidDataSource.setConnectProperties(sslProperties);
+        // session properties
+        PrestoSessionProperties session = jdbcProperties.getSession();
+        if(session !=null){
+            if(session.getQueryMaxExecutionTime() != null && !"".equals(session.getQueryMaxExecutionTime())){
+                connectProperties.put("query_max_execution_time",session.getQueryMaxExecutionTime());
+            }
+
+            if(session.getQueryMaxRunTime() != null && !"".equals(session.getQueryMaxRunTime())){
+                connectProperties.put("query_max_run_time",session.getQueryMaxRunTime());
+            }
+
+            if(session.getQueryMaxTotalMemory() != null && !"".equals(session.getQueryMaxTotalMemory())){
+                connectProperties.put("query_max_total_memory",session.getQueryMaxTotalMemory());
+            }
+        }
+
+        druidDataSource.setConnectProperties(connectProperties);
         // pool
         if(poolProperties.getMinIdle() !=null ){
             druidDataSource.setMinIdle(poolProperties.getMinIdle());

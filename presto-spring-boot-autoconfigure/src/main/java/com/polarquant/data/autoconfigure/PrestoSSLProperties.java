@@ -13,4 +13,7 @@ public class PrestoSSLProperties {
     Boolean enabled = Boolean.FALSE;
     String keyStorePath;
     String keyStorePassword;
+    //The location of the Java TrustStore file that will be used to validate HTTPS server certificates.
+    String trustStorePath;
+    String trustStorePassword;
 }
