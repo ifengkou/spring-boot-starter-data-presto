@@ -12,9 +12,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class PrestoDataSourcePoolProperties {
     Integer initialSize;
     Integer minIdle;
-    Integer maxIdle;
     Integer maxActive;
     Long maxWaitMillis;
     Long timeBetweenEvictionRunsMillis;
     Long minEvictableIdleTimeMillis;
+    String filters;
+    String validationQuery = "SELECT 1";
 }

@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+presto-spring-boot-autoconfigure/src/main/java/com/polarquant/data/autoconfigure/manage/

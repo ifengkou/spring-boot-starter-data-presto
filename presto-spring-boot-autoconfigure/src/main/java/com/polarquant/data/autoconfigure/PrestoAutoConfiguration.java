@@ -1,6 +1,8 @@
 package com.polarquant.data.autoconfigure;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.polarquant.data.autoconfigure.manage.DruidFilter;
+import com.polarquant.data.autoconfigure.manage.PrestoManagerProperties;
 import io.prestosql.jdbc.PrestoConnection;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -12,15 +14,20 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 import java.io.File;
+import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.Properties;
 
 /**
+ * presto data bean auto configuration
  * @author shenlongguang<https://github.com/ifengkou>
  * @date: 2020/10/30
  */
 @Configuration
 @ConditionalOnClass(PrestoConnection.class)
-@EnableConfigurationProperties({PrestoJdbcProperties.class, PrestoDataSourcePoolProperties.class})
+@EnableConfigurationProperties({PrestoJdbcProperties.class,
+        PrestoDataSourcePoolProperties.class,
+        PrestoManagerProperties.class})
 public class PrestoAutoConfiguration {
 
     @Bean(name = "prestoJdbcTemplate")
@@ -30,7 +37,9 @@ public class PrestoAutoConfiguration {
 
     @Bean(name = "prestoDataSource")
     @ConditionalOnMissingBean(name = {"prestoDataSource"})
-    public DataSource prestoDataSource(PrestoJdbcProperties jdbcProperties, PrestoDataSourcePoolProperties poolProperties) {
+    public DataSource prestoDataSource(PrestoJdbcProperties jdbcProperties,
+                                       PrestoDataSourcePoolProperties poolProperties,
+                                       PrestoManagerProperties managerProperties) throws SQLException {
         // druid dataSource
         DruidDataSource druidDataSource = new DruidDataSource();
         // jdbc
@@ -90,9 +99,6 @@ public class PrestoAutoConfiguration {
         if(poolProperties.getMinIdle() !=null ){
             druidDataSource.setMinIdle(poolProperties.getMinIdle());
         }
-        if(poolProperties.getMaxIdle() !=null ){
-            druidDataSource.setMaxIdle(poolProperties.getMaxIdle());
-        }
         if(poolProperties.getMaxActive() !=null ){
             druidDataSource.setMaxActive(poolProperties.getMaxActive());
         }
@@ -107,6 +113,11 @@ public class PrestoAutoConfiguration {
         }
         if(poolProperties.getMaxWaitMillis() !=null ){
             druidDataSource.setMaxWait(poolProperties.getMaxWaitMillis());
+        }
+        druidDataSource.setValidationQuery(poolProperties.getValidationQuery());
+        // filter
+        if(poolProperties.getFilters() !=null ){
+            druidDataSource.setFilters(poolProperties.getFilters());
         }
         return druidDataSource;
     }

@@ -1,8 +1,18 @@
 {
   "groups": [
     {
+      "name": "spring.data.presto.admin",
+      "type": "com.polarquant.data.autoconfigure.manage.PrestoManagerProperties",
+      "sourceType": "com.polarquant.data.autoconfigure.manage.PrestoManagerProperties"
+    },
+    {
       "name": "spring.data.presto.jdbc",
       "type": "com.polarquant.data.autoconfigure.PrestoJdbcProperties",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.session",
+      "type": "com.polarquant.data.autoconfigure.PrestoSessionProperties",
       "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
     },
     {
@@ -18,8 +28,27 @@
   ],
   "properties": [
     {
+      "name": "spring.data.presto.admin.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.polarquant.data.autoconfigure.manage.PrestoManagerProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "spring.data.presto.admin.kill-query-url",
+      "type": "java.lang.String",
+      "description": "http(s):\/\/{presto.web.host_port}\/v1\/query\/#id\/killed",
+      "sourceType": "com.polarquant.data.autoconfigure.manage.PrestoManagerProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.application-name",
+      "type": "java.lang.String",
+      "description": "https:\/\/prestodb.io\/docs\/current\/admin\/resource-groups.html",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
       "name": "spring.data.presto.jdbc.driver",
       "type": "java.lang.String",
+      "description": "the jdbc driver",
       "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties",
       "defaultValue": "com.facebook.presto.jdbc.PrestoDriver"
     },
@@ -27,6 +56,24 @@
       "name": "spring.data.presto.jdbc.password",
       "type": "java.lang.String",
       "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.session.query-max-execution-time",
+      "type": "java.lang.String",
+      "description": "https:\/\/prestosql.io\/docs\/current\/admin\/properties-query-management.html",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSessionProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.session.query-max-run-time",
+      "type": "java.lang.String",
+      "description": "https:\/\/prestosql.io\/docs\/current\/admin\/properties-query-management.html",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSessionProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.session.query-max-total-memory",
+      "type": "java.lang.String",
+      "description": "https:\/\/prestosql.io\/docs\/current\/admin\/properties-memory-management.html",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSessionProperties"
     },
     {
       "name": "spring.data.presto.jdbc.ssl.enabled",
@@ -45,6 +92,16 @@
       "sourceType": "com.polarquant.data.autoconfigure.PrestoSSLProperties"
     },
     {
+      "name": "spring.data.presto.jdbc.ssl.trust-store-password",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSSLProperties"
+    },
+    {
+      "name": "spring.data.presto.jdbc.ssl.trust-store-path",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoSSLProperties"
+    },
+    {
       "name": "spring.data.presto.jdbc.url",
       "type": "java.lang.String",
       "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
@@ -55,17 +112,17 @@
       "sourceType": "com.polarquant.data.autoconfigure.PrestoJdbcProperties"
     },
     {
+      "name": "spring.data.presto.pool.filters",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
       "name": "spring.data.presto.pool.initial-size",
       "type": "java.lang.Integer",
       "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
     },
     {
       "name": "spring.data.presto.pool.max-active",
-      "type": "java.lang.Integer",
-      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
-    },
-    {
-      "name": "spring.data.presto.pool.max-idle",
       "type": "java.lang.Integer",
       "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
     },
@@ -88,6 +145,12 @@
       "name": "spring.data.presto.pool.time-between-eviction-runs-millis",
       "type": "java.lang.Long",
       "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties"
+    },
+    {
+      "name": "spring.data.presto.pool.validation-query",
+      "type": "java.lang.String",
+      "sourceType": "com.polarquant.data.autoconfigure.PrestoDataSourcePoolProperties",
+      "defaultValue": "SELECT 1"
     }
   ],
   "hints": []
